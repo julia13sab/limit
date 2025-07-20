@@ -21,6 +21,8 @@
         <liquibase.version>4.10.0</liquibase.version>
         <lombok.version>1.18.20</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>
+        <postgresql.version>9.1-901-1.jdbc4</postgresql.version>
+        <hikari.version>2.4.2</hikari.version>
     </properties>
 
     <dependencies>
@@ -35,6 +37,16 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>${hikari.version}</version>
         </dependency>
         <dependency>
             <groupId>org.liquibase</groupId>

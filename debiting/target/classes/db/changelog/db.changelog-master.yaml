@@ -59,16 +59,3 @@ databaseChangeLog:
               - column:
                   name: limit_value
                   value: "10000"
-  - changeSet:
-      id: 4
-      author: ysabirova
-      changes:
-        - insert:
-            tableName: cash_limit
-            columns:
-              - column:
-                  name: user_id
-                  value: 2
-              - column:
-                  name: limit_value
-                  value: "10000"

@@ -1,7 +1,6 @@
 package org.limit.debiting.persistence.entity;
 
-import lombok.EqualsAndHashCode;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,12 +8,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 
 @Entity
-@Table(name = "cash_stock")
+@Table(name = "cash_reserve")
 @EqualsAndHashCode
 @RequiredArgsConstructor
-public class CashStock {
+@AllArgsConstructor
+@Setter
+@Getter
+@Builder
+public class CashReserve {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,9 +30,11 @@ public class CashStock {
     private Long userId;
 
     @Column(name = "draft")
-    private Boolean draft;
+    private Boolean cancel;
 
     @Column(name = "amount")
-    private Long amount;
+    private BigDecimal amount;
 
+    @Column(name = "date")
+    private OffsetDateTime date;
 }
